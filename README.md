@@ -1,5 +1,7 @@
 # Populations Vulernable to Dam Failure CyberGIS-Compute Model
 
+**Work in Progress**
+
 ## Server-Side Work
 
 1. Add the data mount to Keeling in `hpc.json`:
@@ -23,3 +25,11 @@
   "mount": {
   }
 ```
+
+3. Add to the database on test.
+
+## Model-Side Work
+
+- [x] Create a manifest
+- [ ] Add a parameter to the Python file and manifest for the dam id
+- [ ] Add to setup.py to verify data/variables?

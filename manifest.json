@@ -1,6 +1,6 @@
 {
     "name": "Populations Vulnerable to Dam Failure",
-    "container": "python",
+    "container": "extractinundationcensustracts-processor",
     "pre_processing_stage": "python setup.py",
     "execution_stage": "python main_multi_scenarios_final.py",
     "post_processing_stage": "python cleanup.py",
