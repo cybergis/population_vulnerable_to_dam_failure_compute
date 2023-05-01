@@ -1,0 +1,26 @@
+{
+    "name": "Populations Vulnerable to Dam Failure",
+    "container": "python",
+    "pre_processing_stage": "python setup.py",
+    "execution_stage": "python main_multi_scenarios_final.py",
+    "post_processing_stage": "python cleanup.py",
+    "slurm_input_rules": {
+        "time": {
+            "max": 540,
+            "min": 15,
+            "default_value": 120,
+            "step": 1,
+            "unit": "Minutes"
+        },
+        "memory": {
+            "max": 64,
+            "min": 32,
+            "default_value": 32,
+            "step": 1,
+            "unit": "GB"
+        }   
+    },
+    "require_upload_data": false,
+    "supported_hpc": ["keeling_community"],
+    "default_hpc": "keeling_community"
+}
