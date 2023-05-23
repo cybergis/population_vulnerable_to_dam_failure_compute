@@ -4,7 +4,7 @@
 
 ## Server-Side Work
 
-1. Add the data mount to Keeling in `hpc.json`:
+1. Add the data mount to Keeling in `hpc.json` (for both Keeling and Anvil):
 
 ```
     "mount": {
@@ -20,7 +20,8 @@
     "dockerfile": "",
     "dockerhub": "",
     "hpc_path": {
-      "keeling_community": "/data/keeling/a/cigi-gisolve/simages/extractinundationcensustracts-processor.sif"
+      "keeling_community": "/data/keeling/a/cigi-gisolve/simages/extractinundationcensustracts-processor.sif",
+      "anvil_community": "/home/x-cybergis/simages/extractinundationcensustracts-processor.sif"
   },
   "mount": {
   }

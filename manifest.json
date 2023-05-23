@@ -21,6 +21,6 @@
         }   
     },
     "require_upload_data": false,
-    "supported_hpc": ["keeling_community"],
+    "supported_hpc": ["anvil_community", "keeling_community"],
     "default_hpc": "keeling_community"
 }
