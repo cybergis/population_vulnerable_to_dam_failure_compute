@@ -415,7 +415,7 @@ if __name__ == "__main__":
     lm_gdf: Bivariate LISA result
     '''
     results = pool.map(population_vulnerable_to_fim_unpacker,
-                            zip(INPUT_DAMS, # List of Dam_ID                                
+                            zip([INPUT_DAMS], # List of Dam_ID                                
                                 itertools.repeat(data_dir), # Input directory of NID inundation mapping
                                 itertools.repeat(temp_path), # Output directory
                                 itertools.repeat(fed_dams), # GeoDataFrame of all dams
