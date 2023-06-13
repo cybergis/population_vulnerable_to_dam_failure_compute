@@ -2,7 +2,7 @@
     "name": "Populations Vulnerable to Dam Failure",
     "container": "extractinundationcensustracts-processor",
     "pre_processing_stage": "python setup.py",
-    "execution_stage": "python main_multi_scenarios_final.py",
+    "execution_stage": "python main_multi_scenarios_final_JP.py",
     "post_processing_stage": "python cleanup.py",
     "slurm_input_rules": {
         "time": {
@@ -19,6 +19,13 @@
             "step": 1,
             "unit": "GB"
         }   
+    },
+    "param_rules": {
+        "dam_id": {
+            "type": "string_input",
+            "require": true,
+            "default_value": "CA10022"
+        }
     },
     "require_upload_data": false,
     "supported_hpc": ["anvil_community", "keeling_community"],

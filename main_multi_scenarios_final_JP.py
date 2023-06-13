@@ -324,8 +324,8 @@ if __name__ == "__main__":
 
     print(f"Iter: {iter_num}, Dam count: {dam_count}, Range: {start_num} - {end_num}")
     '''
-    INPUT_DAMS = []  # Takes NID dam ids as input
-    PROCESSORS = len(INPUT_DAMS)
+    INPUT_DAMS = os.getenv("param_dam_id")  # Takes NID dam ids as input
+    PROCESSORS = 1
 
     # Multiple Scenarios
     sce_mh = {'loadCondition': 'MH', 'breachCondition': 'F'}  # Maximun Height scenario
@@ -358,17 +358,10 @@ if __name__ == "__main__":
     # Find the list of dams in the input folder
     fed_dams = pd.read_csv('./dam_list.csv')
 
-    # Remove dams with error (fim is too small to generate)
-    fed_dams = fed_dams.loc[fed_dams['ID'] != 'CO01283S001']
-
     # Locate dams per lat/lon
     fed_dams = gpd.GeoDataFrame(fed_dams, geometry=gpd.points_from_xy(fed_dams['LON'], fed_dams['LAT'], crs="EPSG:4326"))
     print(f'Total Dams: {fed_dams.shape[0]}')
     
-    dois = fed_dams.loc[fed_dams['ID'].isin(INPUT_DAMS)].to_list()
-    # dois = dois[start_num:end_num]
-    print(dois)
-
     # Census tract to find state associated with fim of each dam
     tract = gpd.read_file(os.path.join(data_dir, 'census_geometry', 'census_tract_from_api.geojson'))
 
@@ -422,7 +415,7 @@ if __name__ == "__main__":
     lm_gdf: Bivariate LISA result
     '''
     results = pool.map(population_vulnerable_to_fim_unpacker,
-                            zip(dois, # List of Dam_ID                                
+                            zip(INPUT_DAMS, # List of Dam_ID                                
                                 itertools.repeat(data_dir), # Input directory of NID inundation mapping
                                 itertools.repeat(temp_path), # Output directory
                                 itertools.repeat(fed_dams), # GeoDataFrame of all dams
