@@ -13,9 +13,9 @@
             "unit": "Minutes"
         },
         "memory": {
-            "max": 64,
-            "min": 32,
-            "default_value": 32,
+            "max": 24,
+            "min": 12,
+            "default_value": 12,
             "step": 1,
             "unit": "GB"
         }   
