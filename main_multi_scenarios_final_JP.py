@@ -343,7 +343,8 @@ if __name__ == "__main__":
     # temp_path = output_dir # Temporary directory for write GDAL results
     
     # CyberGIS-Compute directory
-    data_dir = "/job/aging_dam_data" # or /data/cigi/common/jparkgeo/aging_dam_data # from Keeling server
+    # data_dir = "/job/aging_dam_data" # or /data/cigi/common/jparkgeo/aging_dam_data # from Keeling server
+    data_dir = '/data/cigi/common/jparkgeo/aging_dam_data' # from Keeling server
     output_dir = os.path.join("/job/result", f'Multi_F_Results', f'N_0')
     temp_path = os.getcwd() # Temporary directory for write GDAL results
 
