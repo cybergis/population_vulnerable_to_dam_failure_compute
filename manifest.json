@@ -7,15 +7,15 @@
     "slurm_input_rules": {
         "time": {
             "max": 540,
-            "min": 15,
-            "default_value": 120,
-            "step": 1,
+            "min": 20,
+            "default_value": 20,
+            "step": 5,
             "unit": "Minutes"
         },
         "memory": {
             "max": 24,
-            "min": 12,
-            "default_value": 12,
+            "min": 8,
+            "default_value": 8,
             "step": 1,
             "unit": "GB"
         }   
@@ -29,5 +29,5 @@
     },
     "require_upload_data": false,
     "supported_hpc": ["anvil_community", "keeling_community"],
-    "default_hpc": "keeling_community"
+    "default_hpc": "anvil_community"
 }
